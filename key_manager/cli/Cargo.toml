@@ -17,3 +17,6 @@ threadpool = "1.7"
 name = "keymgr"
 path = "src/main.rs"
 doc = false
+
+[workspace] 
+members = [] 
