@@ -1,0 +1,1 @@
+docker run -d --net=host --name conflux -v /Users/stplaydog/gitlocal/triasteam/conflux-rust/examples/docker/data:/conflux/run_time/data -v /Users/stplaydog/gitlocal/triasteam/conflux-rust/examples/docker/data/conflux.conf:/conflux/run_time/data/conflux.conf conflux:dev /entrypoint.sh
