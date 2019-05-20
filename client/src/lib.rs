@@ -292,7 +292,7 @@ impl Client {
 
         let debug_rpc_http_server = rpc::new_http(
             rpc::HttpConfiguration::new(
-                Some((127, 0, 0, 1)),
+                Some((0, 0, 0, 0)),
                 conf.raw_conf.jsonrpc_local_http_port,
                 conf.raw_conf.jsonrpc_cors.clone(),
                 conf.raw_conf.jsonrpc_http_keep_alive,
