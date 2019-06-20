@@ -50,7 +50,7 @@ class TestNode:
         else:
             self.ip = "127.0.0.1"
             self.rpcport = rpc_port(self.index)
-        self.port = str(p2p_port(index))
+        # self.port = str(p2p_port(index))  # just comment for performance test
         if self.rpchost is None:
             self.rpchost = ip  # + ":" + str(rpc_port(index))
         self.rpc_timeout = CONFLUX_RPC_WAIT_TIMEOUT if rpc_timeout is None else rpc_timeout
