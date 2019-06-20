@@ -24,11 +24,11 @@ class Account:
 
 class Generator:
 
-    def __init__(self):
+    def __init__(self, hosts_and_posts: list):
         self.nodes = []
-        self.init_nodes()
+        self.init_nodes(hosts_and_posts)
 
-    def init_nodes(self):
+    def init_nodes(self, hosts_and_posts: list):
         MAX_NODES = 1
         for i in range(MAX_NODES):
             # datadir = initialize_datadir(self.options.cachedir, i)
@@ -39,9 +39,9 @@ class Generator:
                 TestNode(
                     i,
                     "",  # get_datadir_path(self.options.cachedir, i),
-                    rpchost="127.0.0.1",
+                    rpchost=hosts_and_posts[i][0],
                     confluxd="",
-                    rpcport=8091,
+                    rpcport=hosts_and_posts[i][1],
                     remote=True
                 )
             )
@@ -97,5 +97,5 @@ class Generator:
 
 
 if __name__ == "__main__":
-    g = Generator()
+    g = Generator([("127.0.0.1", 8091)])
     g.write_to_file(g.generate_tx(1000))
